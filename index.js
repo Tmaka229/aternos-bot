@@ -43,7 +43,7 @@ client.on(Events.InteractionCreate, async interaction => {
 
 });
 
-client.login('MTUwNDQyNDcwMzE2MTUzMjQzNg.G2-Cz9.UE_SfvbvhwxLMmI1BLKNzQY13p4755n0cf4Ixc');});
+client.login('MTUwNDQyNDcwMzE2MTUzMjQzNg.GBFyMH.UyV1UoVI0u7ma-5h0_g-HFvkuZZF443KPmrc_4');});
 
 client.on(Events.InteractionCreate, async interaction => {
   if (!interaction.isButton()) return;
