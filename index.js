@@ -43,6 +43,15 @@ client.on(Events.InteractionCreate, async interaction => {
 
 });
 
+client.login(process.env.TOKEN);
+  if (interaction.customId === 'start_server') {
+
+    await interaction.reply('✅ กำลังเปิดเซิร์ฟ...');
+
+  }
+
+});
+
 client.login('MTUwNDQyNDcwMzE2MTUzMjQzNg.GBFyMH.UyV1UoVI0u7ma-5h0_g-HFvkuZZF443KPmrc_4');});
 
 client.on(Events.InteractionCreate, async interaction => {
