@@ -7,21 +7,15 @@ const {
   Events
 } = require('discord.js');
 
-const Aternos = require('aternos');
-
 const client = new Client({
   intents: [GatewayIntentBits.Guilds]
 });
 
-const at = new Aternos({
-  username: 'อีเมลAternos',
-  password: 'รหัสAternos'
-});
-
 client.once(Events.ClientReady, async () => {
+
   console.log('Bot Online');
 
-  const channel = await client.channels.fetch('CHANNEL_ID');
+  const channel = await client.channels.fetch('1504422664469610576');
 
   const row = new ActionRowBuilder().addComponents(
     new ButtonBuilder()
@@ -34,7 +28,22 @@ client.once(Events.ClientReady, async () => {
     content: 'กดปุ่มเพื่อเปิดเซิร์ฟ Minecraft',
     components: [row]
   });
+
 });
+
+client.on(Events.InteractionCreate, async interaction => {
+
+  if (!interaction.isButton()) return;
+
+  if (interaction.customId === 'start_server') {
+
+    await interaction.reply('✅ กำลังเปิดเซิร์ฟ...');
+
+  }
+
+});
+
+client.login('MTUwNDQyNDcwMzE2MTUzMjQzNg.G2-Cz9.UE_SfvbvhwxLMmI1BLKNzQY13p4755n0cf4Ixc');});
 
 client.on(Events.InteractionCreate, async interaction => {
   if (!interaction.isButton()) return;
