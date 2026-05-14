@@ -19,27 +19,15 @@ client.once(Events.ClientReady, async () => {
 
   const row = new ActionRowBuilder().addComponents(
     new ButtonBuilder()
-      .setCustomId('start_server')
-      .setLabel('🟢 เปิดเซิร์ฟ')
-      .setStyle(ButtonStyle.Success)
+      .setLabel('🟢 เปิดหน้า Aternos')
+      .setStyle(ButtonStyle.Link)
+      .setURL('https://aternos.org/server/')
   );
 
   await channel.send({
-    content: 'กดปุ่มเพื่อเปิดเซิร์ฟ Minecraft',
+    content: 'กดเพื่อเข้าไปเปิดเซิร์ฟ Minecraft',
     components: [row]
   });
-
-});
-
-client.on(Events.InteractionCreate, async interaction => {
-
-  if (!interaction.isButton()) return;
-
-  if (interaction.customId === 'start_server') {
-
-    await interaction.reply('✅ กำลังเปิดเซิร์ฟ...');
-
-  }
 
 });
 
